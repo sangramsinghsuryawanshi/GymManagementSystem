@@ -1,14 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // Import Link for routing
 import '../CSS/Header.css';
 
-const Header = ({ setActiveModule }) => {
+const Header = () => {
   return (
     <header className="app-header">
-      <nav className="nav-bar">
-        <button onClick={() => setActiveModule('members')} className="nav-button">Member Management</button>
-        <button onClick={() => setActiveModule('trainers')} className="nav-button">Trainer Management</button>
-        <button onClick={() => setActiveModule('payments')} className="nav-button">Payment Management</button>
-        <button onClick={() => setActiveModule('attendance')} className="nav-button">Attendance Tracking</button>
+      <nav className="nav-bar-1">
+        <Link to="/home" className="nav-button-1">Home</Link>
+        <Link to="/aboutUs" className="nav-button-1">About Us</Link>
+        <Link to="/members" className="nav-button-1">Member Management</Link>
+        <Link to="/trainers" className="nav-button-1">Trainer Management</Link>
+        <Link to="/payments" className="nav-button-1">Payment Management</Link>
+        <Link to="/attendance" className="nav-button-1">Attendance Tracking</Link>
+        <button 
+            onClick={() => {
+              localStorage.clear(); // Clear any stored user data
+              window.location.href = '/login'; // Redirect to login page
+            }} 
+            className="logout-button-1"
+          >
+            Logout
+          </button>
       </nav>
     </header>
   );

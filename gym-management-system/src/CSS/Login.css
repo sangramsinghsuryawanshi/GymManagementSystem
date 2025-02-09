@@ -1,0 +1,89 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+  }
+  
+  .module-title {
+    color: #00796b;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .login-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .login-form input:focus {
+    border-color: #00796b;
+  }
+  
+  .login-form button {
+    padding: 12px;
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-form button:hover {
+    background-color: #005a4f;
+  }
+  
+  .message {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .redirect-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .redirect-link span {
+    color: #00796b;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .redirect-link span:hover {
+    color: #005a4f;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .login-form {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .module-title {
+      font-size: 28px;
+    }
+  }
+  

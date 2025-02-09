@@ -61,7 +61,21 @@
 .member-form button:hover {
   background-color: #005a4f;
 }
+.redirect-link {
+  margin-top: 20px;
+  text-align: center;
+  color: #00796b;
+  cursor: pointer;
+}
 
+.redirect-link span {
+  color: #00796b;
+  text-decoration: underline;
+}
+
+.redirect-link span:hover {
+  color: #004d40;
+}
 .message {
   text-align: center;
   font-size: 16px;

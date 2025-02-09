@@ -7,5 +7,5 @@ import com.GymManagementSystem.model.Members;
 
 @Repository
 public interface MemeberRpository extends JpaRepository<Members, Integer> {
-
+	public Members findByEmail(String email);
 }

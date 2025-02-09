@@ -8,39 +8,58 @@
     z-index: 1000;
   }
   
-  .nav-bar {
+  .nav-bar-1 {
     display: flex;
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
   }
   
-  .nav-button {
+  .nav-button-1 {
     background-color: #e0f7fa;
     border: 1px solid #b2ebf2;
     padding: 12px 25px;
     color: #00796b;
     font-size: 16px;
+    text-decoration: none;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .nav-button:hover {
+  .nav-button-1:hover {
     background-color: #b2ebf2;
     color: #004d40;
     transform: translateY(-2px);
   }
+  .logout-button-1 {
+    padding: 15px 16px;
+    background-color: #e53e3e;         
+    color: white;                      
+    border: none;                          
+    border-radius: 8px;               
+    cursor: pointer;          
+    position: absolute;                /* Position absolute to fix it on the left */
+    right: 16px;    
+    transition: background 0.3s ease;  
+  }
+  
+  .logout-button-1:hover {
+    background-color: #c53030;  /* Darker red on hover */
+  }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .nav-bar {
+    .nav-bar-1 {
       flex-direction: column;
       gap: 10px;
     }
-  
-    .nav-button {
+    .logout-button-1 {
+      padding: 6px 12px;  /* Smaller padding for buttons */
+      font-size: 0.9rem;  /* Reduce font size for buttons */
+    }
+    .nav-button-1 {
       width: 90%;
       font-size: 14px;
       padding: 10px 20px;
@@ -48,10 +67,14 @@
   }
   
   @media (max-width: 480px) {
-    .nav-button {
+    .nav-button-1 {
       width: 100%;
       font-size: 13px;
       padding: 8px 15px;
+    }
+    .logout-button-1 {
+      width: 100%;          /* Full-width buttons for better touch interaction */
+      text-align: center;
     }
   }
   
