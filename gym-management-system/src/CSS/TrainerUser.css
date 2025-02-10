@@ -1,0 +1,56 @@
+.trainer-container {
+    width: 90%;
+    margin: 20px auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .module-title {
+    text-align: center;
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .trainer-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+  }
+  
+  .trainer-table th, 
+  .trainer-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .trainer-table th {
+    background: #e0e0e0;
+    color: #333;
+  }
+  
+  .trainer-table tbody tr:hover {
+    background: #f0f0f0;
+    transition: background 0.3s ease;
+  }
+  
+  .trainer-table td {
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .trainer-container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .trainer-table th, 
+    .trainer-table td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  

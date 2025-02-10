@@ -1,0 +1,156 @@
+.trainers-container {
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #e3f2fd, #c8fbbb);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.module-title {
+  text-align: center;
+  color: #0d47a1;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #c8e6c9;
+  color: #1b5e20;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.trainer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trainer-form input, .trainer-form select, .trainer-form button {
+  padding: 12px 15px;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.trainer-form input:focus, .trainer-form select:focus {
+  border-color: #42a5f5;
+  box-shadow: 0 0 5px rgba(66, 165, 245, 0.5);
+}
+
+.trainer-form button {
+  background-color: #63d219;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.trainer-form button:hover {
+  background-color: #1565c0;
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .trainers-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .module-title {
+    font-size: 24px;
+  }
+
+  .trainer-form input, .trainer-form select, .trainer-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainer-form input, .trainer-form select, .trainer-form button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .module-title {
+    font-size: 20px;
+  }
+}
+
+/* .trainer-container {
+    padding: 20px;
+    background-color: #fdfdfd;
+  }
+  
+  .module-title {
+    text-align: center;
+    color: #00695c;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .trainer-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .trainer-table th, .trainer-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .trainer-table th {
+    background-color: #b2ebf2;
+    color: #00695c;
+    font-weight: bold;
+  }
+  
+  .trainer-table tr:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .trainer-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+
+  @media (max-width: 768px) {
+    .trainer-table {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .trainer-table th, .trainer-table td {
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .module-title {
+      font-size: 24px;
+    }
+  
+    .trainer-table {
+      font-size: 12px;
+    }
+  
+    .trainer-table th, .trainer-table td {
+      padding: 10px;
+    }
+  }
+   */

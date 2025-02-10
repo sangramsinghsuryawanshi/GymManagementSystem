@@ -10,7 +10,7 @@
   }
   
   .about-us-container h1, .about-us-container h2 {
-    color: #1d4ed8;
+    color: #000000;
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -35,7 +35,7 @@
   
   .about-us-container ul li::before {
     content: '\2022';
-    color: #1d4ed8;
+    color: #000000;
     font-weight: bold;
     display: inline-block;
     width: 1em;

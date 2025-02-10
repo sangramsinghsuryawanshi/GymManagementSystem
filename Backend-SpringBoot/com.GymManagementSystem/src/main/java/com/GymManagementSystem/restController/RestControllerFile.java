@@ -9,12 +9,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.GymManagementSystem.model.Members;
+import com.GymManagementSystem.model.Trainer;
 import com.GymManagementSystem.service.MembersService;
+import com.GymManagementSystem.service.TrainerService;
 
 @RestController
 @RequestMapping("/api")
@@ -25,10 +28,15 @@ public class RestControllerFile {
 	
 	MembersService membersService;
 	
-	public RestControllerFile(MembersService membersService) {
+	TrainerService trainerService;
+	
+	public RestControllerFile(MembersService membersService, TrainerService trainerService) {
 		super();
 		this.membersService = membersService;
+		this.trainerService = trainerService;
 	}
+	
+	// Login And SignUp Part 
 	@PostMapping("/signup")
 	public ResponseEntity<String> isMemberApi(@RequestBody Members members) {
 		String sucess = membersService.memberCreation(members);
@@ -39,10 +47,6 @@ public class RestControllerFile {
 		{
 			return new ResponseEntity<>("Failed to create member.", HttpStatus.BAD_REQUEST); 
 		}
-	}
-	@GetMapping("/members")
-	public List<Members> isMemberGetApi() {
-		return membersService.getMember();
 	}
 	@PostMapping("/login")
 	public ResponseEntity<String> isLoginPutApi(@RequestBody Members members) {
@@ -56,4 +60,28 @@ public class RestControllerFile {
 			return new ResponseEntity<>("Failed to Login.", HttpStatus.BAD_REQUEST); 
 		}
 	}
+	
+	//User Part
+	@GetMapping("/members")
+	public List<Members> isMemberGetApi() {
+		return membersService.getMember();
+	}
+	
+	
+	// Admin Part
+	@PostMapping("/trainers")
+	public ResponseEntity<String> isTrainerPostApi(@RequestBody Trainer trainer){
+		String message = trainerService.isTrinerCreation(trainer);
+		if(message.equals("Trainer creates successfully...")) {
+			return new ResponseEntity<String>(message, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST); 
+		}
+	}
+	
+	@GetMapping("trainers")
+	public List<Trainer> isTrainerPutApi(){
+		return trainerService.isGetTrainer();
+	}
+	
 }
