@@ -14,6 +14,7 @@ import Footer from './component/Footer.js';
 import AboutUs from './User/AboutUs.js';
 import TrainerUser from './User/TrainerUser.js';
 import ContactForm from './User/ContactForm.js';
+import UserDetail from './User/UserDetail.js';
 import './App.css';
 
 const GymManagementSystem = () => {
@@ -48,10 +49,9 @@ const GymManagementSystem = () => {
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/members" element={<Members />} />
             <Route path="/trainers" element={<TrainerUser />} />
             <Route path="/contactForm" element={<ContactForm/>} />
-            <Route path="/attendance" element={<AttendanceTracking />} />
+            <Route path="/userDetail" element={<UserDetail />} />
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
           <Footer/>

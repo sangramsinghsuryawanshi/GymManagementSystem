@@ -8,5 +8,6 @@ public interface MembersService {
 	
 	public String memberCreation(Members members);
 	public List<Members> getMember();
-	public String isLogin(Members members);
+	public Members isLogin(Members members);
+	public String isUpMember(int member_id,Members members);
 }

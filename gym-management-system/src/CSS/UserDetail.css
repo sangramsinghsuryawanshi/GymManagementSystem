@@ -1,0 +1,82 @@
+.user-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .module-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .message {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: #4CAF50;
+    margin-bottom: 10px;
+  }
+  
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .user-form input,
+  .user-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .user-form label {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    color: #444;
+  }
+  
+  .user-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .user-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .user-container {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .user-form input,
+    .user-form select {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    .user-form button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  

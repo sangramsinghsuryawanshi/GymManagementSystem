@@ -27,21 +27,37 @@ const Login = ({ onLoginSuccess }) => {
       onLoginSuccess("admin");
       return;
     }
-
-    try {
-      const response = await axios.post(
-        "http://localhost:8080/api/login",
-        credentials
+try{
+    const response = await axios.post("http://localhost:8080/api/login", credentials);
+      
+    if (response.data.email === credentials.email) {
+      // ✅ Store only necessary data
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: response.data.member_id,  // Store ID properly
+          name: response.data.name,
+          email: response.data.email,
+          phoneNumber:response.data.phoneNumber,
+          address:response.data.address,
+          gender:response.data.gender,
+          dateOfBirth:response.data.dateOfBirth,
+          membershipType:response.data.membershipType,
+          membershipStartDate:response.data.membershipStartDate,
+          membershipEndDate:response.data.membershipEndDate,
+          status:response.data.status
+        })
       );
-      if (response.data === "user") {
-        onLoginSuccess("user");
-      } else {
-        setMessage("Invalid credentials. Please try again.");
-      }
-    } catch (error) {
-      setMessage("An error occurred during login.");
+
+      onLoginSuccess("user");
+      navigate(`/user-detail/${response.data.member_id}`); // Redirect to UserDetail
+    } else {
+      setMessage("Invalid credentials. Please try again.");
     }
-  };
+  }catch (error) {
+    setMessage("An error occurred during login.");
+  }
+};
 
   return (
     <div className="login-container">

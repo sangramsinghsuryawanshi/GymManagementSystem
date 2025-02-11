@@ -34,17 +34,28 @@ public class MembersImpl implements MembersService {
 	}
 
 	@Override
-	public String isLogin(Members members) {
+	public Members isLogin(Members members) {
 		String email = members.getEmail();
 		String password = members.getPassword();
 		Members members2 = memeberRpository.findByEmail(email);
 		logger.debug("Checking login credentials for email: {}", members.getEmail());
 		if(members2!=null && members2.getPassword().equals(password)) {
 			logger.info("User authenticated successfully: {}", members.getEmail());
-			return "Login Successfull";
+			return members2;
 		}else {
 			logger.error("Authentication failed for email: {}", members.getEmail());
-			return "Login Failed";
+			return null;
+		}
+	}
+
+	@Override
+	public String isUpMember(int member_id,Members members) {
+		Members members2 = memeberRpository.findById(member_id).orElse(null);
+		if(members2!=null) {
+			memeberRpository.save(members2);
+			return "updated";
+		}else {
+			return "not updated";
 		}
 	}
 	

@@ -1,6 +1,6 @@
 /* Contact Form Container */
 .contact-container {
-    max-width: 500px;
+    max-width: 450px;
     width: 90%;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -14,10 +14,8 @@
   
   /* Title */
   .contact-container h2 {
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 30px;
     margin-bottom: 15px;
-    text-transform: uppercase;
   }
   
   /* Form Fields */
@@ -32,7 +30,7 @@
     width: 98%;
     padding: 12px;
     margin: 10px 0;
-    border-color: saddlebrown;
+    border-color: rgb(145, 255, 72);
     border-radius: 8px 8px;
     font-size: 16px;
     color: #333;
@@ -62,7 +60,7 @@
   }
   
   .contact-form button:hover {
-    background: #ff1c00;
+    background: #7e1818;
   }
   
   /* Responsive Design */

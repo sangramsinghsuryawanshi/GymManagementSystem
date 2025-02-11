@@ -8,14 +8,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.GymManagementSystem.model.ContactForm;
 import com.GymManagementSystem.model.Members;
 import com.GymManagementSystem.model.Trainer;
+import com.GymManagementSystem.service.ContactFormService;
 import com.GymManagementSystem.service.MembersService;
 import com.GymManagementSystem.service.TrainerService;
 
@@ -30,10 +33,15 @@ public class RestControllerFile {
 	
 	TrainerService trainerService;
 	
-	public RestControllerFile(MembersService membersService, TrainerService trainerService) {
+	ContactFormService contactFormService;
+	
+	
+	public RestControllerFile(MembersService membersService, TrainerService trainerService,
+			ContactFormService contactFormService) {
 		super();
 		this.membersService = membersService;
 		this.trainerService = trainerService;
+		this.contactFormService = contactFormService;
 	}
 	
 	// Login And SignUp Part 
@@ -49,22 +57,44 @@ public class RestControllerFile {
 		}
 	}
 	@PostMapping("/login")
-	public ResponseEntity<String> isLoginPutApi(@RequestBody Members members) {
-		String message = membersService.isLogin(members);
+	public ResponseEntity<Members> isLoginPutApi(@RequestBody Members members) {
+		Members message = membersService.isLogin(members);
 		//logger.info("Login attempt for email: {}", members.getEmail());
-		if(message.equals("Login Successfull")) {
-			 logger.info("Login successful for email: {}", members.getEmail());
-			return new ResponseEntity<>("user", HttpStatus.OK); 
-		}else {
-			logger.warn("Failed login attempt for email: {}", members.getEmail());
-			return new ResponseEntity<>("Failed to Login.", HttpStatus.BAD_REQUEST); 
-		}
+			logger.info("Login successful for email: {}", message.toString());
+			return new ResponseEntity<Members>(message, HttpStatus.OK);
+			//logger.warn("Failed login attempt for email: {}", members.getEmail());
 	}
 	
 	//User Part
 	@GetMapping("/members")
 	public List<Members> isMemberGetApi() {
 		return membersService.getMember();
+	}
+	@PostMapping("/contact")
+	public ResponseEntity<String> isContactFormApi(@RequestBody ContactForm contactForm) {
+		String message = contactFormService.isCoFormCreate(contactForm);
+		//logger.debug("message: "+message);
+		if(message.equals("message sent successful.!")) {
+			return new ResponseEntity<String>(message, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+		}
+	}
+//	@GetMapping("/UserDetail/{member_id}")
+//	public ResponseEntity<Members> isFetchApiMemeber(@PathVariable int member_id){
+//		logger.info("member id: "+member_id);
+//		return null;
+//	}
+	@PutMapping("/UserDetail/{member_id}")
+	public ResponseEntity<String> isUpPutMemApi(@PathVariable String member_id, @RequestBody Members members){
+		String message = "s";//membersService.isUpMember(member_id,members);
+		logger.info("members detalis from frontend:\n"+members.toString());
+		logger.info(member_id);
+		if(message.equals("updated")) {
+			return new ResponseEntity<String>(message, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 	

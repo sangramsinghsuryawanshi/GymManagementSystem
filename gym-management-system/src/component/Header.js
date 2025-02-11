@@ -8,10 +8,9 @@ const Header = () => {
       <nav className="nav-bar-1">
         <Link to="/home" className="nav-button-1">Home</Link>
         <Link to="/aboutUs" className="nav-button-1">About Us</Link>
-        <Link to="/members" className="nav-button-1">Member Management</Link>
         <Link to="/trainers" className="nav-button-1">Trainers</Link>
         <Link to="/contactForm" className="nav-button-1">Enquiry</Link>
-        <Link to="/attendance" className="nav-button-1">Attendance Tracking</Link>
+        <Link to="/userDetail" className="nav-button-1">Profile</Link>
         <button 
             onClick={() => {
               localStorage.clear(); // Clear any stored user data
