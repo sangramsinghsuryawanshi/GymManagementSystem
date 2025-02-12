@@ -1,0 +1,109 @@
+/* Main container styling */
+.memb-container {
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+/* Title Styling */
+.module-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table Styling */
+.members-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+.members-table th {
+    background: linear-gradient(to right, #b85a5a, #d85c5c);
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Table Rows */
+.members-table th, .members-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Table Hover Effect */
+.members-table tbody tr:hover {
+    background-color: #f0f0f0;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Buttons Styling */
+.update-btn, .delete-btn {
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Update Button */
+.update-btn {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-btn:hover {
+    background: #388E3C;
+    transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn:hover {
+    background: #C62828;
+    transform: scale(1.05);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .members-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .members-table th, .members-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .update-btn, .delete-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

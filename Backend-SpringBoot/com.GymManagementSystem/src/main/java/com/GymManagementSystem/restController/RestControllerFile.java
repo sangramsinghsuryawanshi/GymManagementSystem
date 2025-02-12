@@ -86,10 +86,10 @@ public class RestControllerFile {
 //		return null;
 //	}
 	@PutMapping("/UserDetail/{member_id}")
-	public ResponseEntity<String> isUpPutMemApi(@PathVariable String member_id, @RequestBody Members members){
-		String message = "s";//membersService.isUpMember(member_id,members);
+	public ResponseEntity<String> isUpPutMemApi(@PathVariable int member_id, @RequestBody Members members){
+		String message = membersService.isUpMember(member_id,members);
 		logger.info("members detalis from frontend:\n"+members.toString());
-		logger.info(member_id);
+		//logger.info(member_id);
 		if(message.equals("updated")) {
 			return new ResponseEntity<String>(message, HttpStatus.OK);
 		}else {
@@ -107,6 +107,17 @@ public class RestControllerFile {
 		}else {
 			return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST); 
 		}
+	}
+	@PutMapping("/admin/members/{member_id}")
+	public ResponseEntity<String> updateMember(@PathVariable int member_id, @RequestBody Members updatedMember) {
+		logger.info("PUT API hit with member_id: {}", member_id); // Log API hit
+        logger.info("Received data: {}", updatedMember.toString());
+        String message = membersService.isUserUp(member_id, updatedMember);
+        if(message.equals("updated")) {
+        	return new ResponseEntity<String>(message, HttpStatus.OK);
+        }else {
+        	return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+        }
 	}
 	
 	@GetMapping("trainers")

@@ -10,9 +10,10 @@ const AdminHeader = () => {
           <Link to="/admin">Gym Admin Panel</Link>
         </div>
         <div className="nav-links flex space-x-4">
+        <Link to="/" className="nav-button">Home</Link>
           <Link to="/admin/members" className="nav-button">Manage Members</Link>
           <Link to="/admin/trainers" className="nav-button">Manage Trainers</Link>
-          <Link to="/admin/payments" className="nav-button">Payments</Link>
+          {/* <Link to="/admin/payments" className="nav-button">Payments</Link> */}
           <Link to="/admin/attendance" className="nav-button">Attendance</Link>
           <Link to="/admin/reports" className="nav-button">Reports</Link>
           <button 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import Members from './User/Members.js';
+import Members from './Admin/Members.js';
 import Trainers from './Admin/Trainers.js';
-import AttendanceTracking from './User/AttendanceTracking.js';
+//import AttendanceTracking from './User/AttendanceTracking.js';
 import Signup from './loginSignup/Signup.js';
 import Login from './loginSignup/Login.js';
 import Header from './component/Header.js';
@@ -15,6 +15,7 @@ import AboutUs from './User/AboutUs.js';
 import TrainerUser from './User/TrainerUser.js';
 import ContactForm from './User/ContactForm.js';
 import UserDetail from './User/UserDetail.js';
+import UpdateMember from './Admin/UpdateMember.js';
 import './App.css';
 
 const GymManagementSystem = () => {
@@ -35,7 +36,9 @@ const GymManagementSystem = () => {
           <AdminHeader />
           <Routes>
             <Route path="/" element={<Navigate to="/admin" />} />
+            <Route path="/admin/members" element={<Members />} />
             <Route path="/admin/trainers" element={<Trainers />} />
+            <Route path="/update-member" element={<UpdateMember />} />
             <Route path="/admin" element={<AdminPanel />} />
             <Route path="*" element={<Navigate to="/admin" />} />
           </Routes>

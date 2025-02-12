@@ -38,6 +38,7 @@ try{
           id: response.data.member_id,  // Store ID properly
           name: response.data.name,
           email: response.data.email,
+          password:response.data.password,
           phoneNumber:response.data.phoneNumber,
           address:response.data.address,
           gender:response.data.gender,
