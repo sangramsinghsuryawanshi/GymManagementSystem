@@ -16,6 +16,8 @@ import TrainerUser from './User/TrainerUser.js';
 import ContactForm from './User/ContactForm.js';
 import UserDetail from './User/UserDetail.js';
 import UpdateMember from './Admin/UpdateMember.js';
+import UpdateTrainer from './Admin/UpdateTrainer.js';
+import ContactList from './Admin/ContactList.js';
 import './App.css';
 
 const GymManagementSystem = () => {
@@ -39,6 +41,8 @@ const GymManagementSystem = () => {
             <Route path="/admin/members" element={<Members />} />
             <Route path="/admin/trainers" element={<Trainers />} />
             <Route path="/update-member" element={<UpdateMember />} />
+            <Route path="/update-trainer" element={<UpdateTrainer />} />
+            <Route path="/contact-list" element={<ContactList />} />
             <Route path="/admin" element={<AdminPanel />} />
             <Route path="*" element={<Navigate to="/admin" />} />
           </Routes>

@@ -11,4 +11,5 @@ public interface MembersService {
 	public Members isLogin(Members members);
 	public String isUpMember(int member_id,Members members);
 	public String isUserUp(int member_id,Members members);
+	public String isDelMem(int member_id);
 }

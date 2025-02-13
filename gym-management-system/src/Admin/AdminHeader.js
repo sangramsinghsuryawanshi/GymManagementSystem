@@ -11,11 +11,10 @@ const AdminHeader = () => {
         </div>
         <div className="nav-links flex space-x-4">
         <Link to="/" className="nav-button">Home</Link>
-          <Link to="/admin/members" className="nav-button">Manage Members</Link>
-          <Link to="/admin/trainers" className="nav-button">Manage Trainers</Link>
+          <Link to="/admin/members" className="nav-button">Manage Users</Link>
+          <Link to="/admin/trainers" className="nav-button">Add Trainers</Link>
           {/* <Link to="/admin/payments" className="nav-button">Payments</Link> */}
-          <Link to="/admin/attendance" className="nav-button">Attendance</Link>
-          <Link to="/admin/reports" className="nav-button">Reports</Link>
+          <Link to="/contact-list" className="nav-button">Message-list</Link>
           <button 
             onClick={() => {
               localStorage.clear(); // Clear any stored user data

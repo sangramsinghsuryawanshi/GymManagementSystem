@@ -42,9 +42,9 @@ const Signup = () => {
 
   return (
     <div className="member-container">
-      <h2 className="module-title">Sign Up</h2>
+      <h2 className="module-title-1">Sign Up</h2>
 
-      {message && <p className="message">{message}</p>}
+      {message && <p className="message-1">{message}</p>}
 
       <form className="member-form" onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Name" value={newMember.name} onChange={handleInputChange} required />
@@ -79,7 +79,7 @@ const Signup = () => {
         <button type="submit">Sign Up</button>
       </form>
 
-      <p className="redirect-link">
+      <p className="redirect-link-1">
         Already have an account? <span onClick={() => navigate('/login')}>Login here</span>
       </p>
     </div>

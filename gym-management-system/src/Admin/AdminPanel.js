@@ -1,9 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
 import "../AdminCSS/AdminPanel.css";
 
 const AdminPanel = () => {
-  const navigate = useNavigate();
 
   return (
     <div className="admin-panel">
@@ -13,29 +12,29 @@ const AdminPanel = () => {
       </div>
 
       <div className="admin-sections">
-        <div className="admin-card" onClick={() => navigate("/admin/members")}>
+        <div className="admin-card" >
           <img src="/images/members.jpg" alt="Members" />
           <h3>Manage Members</h3>
           <p>View, add, update, or remove gym members.</p>
         </div>
 
-        <div className="admin-card" onClick={() => navigate("/admin/trainers")}>
+        <div className="admin-card" >
           <img src="/images/gym_trainer.jpg" alt="Trainers" />
           <h3>Manage Trainers</h3>
           <p>View and assign trainers to members.</p>
         </div>
 
-        <div className="admin-card" onClick={() => navigate("/admin/classes")}>
+        <div className="admin-card" >
           <img src="/images/Groupclasses.jpg" alt="Classes" />
           <h3>Manage Classes</h3>
           <p>Schedule, edit, and organize gym classes.</p>
         </div>
 
-        <div className="admin-card" onClick={() => navigate("/admin/payments")}>
+        {/* <div className="admin-card" >
           <img src="/images/yoga.jpg" alt="Payments" />
           <h3>Manage Payments</h3>
           <p>View and handle membership payments.</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

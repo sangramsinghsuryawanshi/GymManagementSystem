@@ -21,7 +21,7 @@
 }
 
 /* Table Styling */
-.members-table {
+.members-table,.trainers-table {
     width: 100%;
     border-collapse: collapse;
     background: white;
@@ -31,7 +31,7 @@
 }
 
 /* Table Header */
-.members-table th {
+.members-table th,.trainers-table th {
     background: linear-gradient(to right, #b85a5a, #d85c5c);
     color: white;
     font-weight: bold;
@@ -41,14 +41,14 @@
 }
 
 /* Table Rows */
-.members-table th, .members-table td {
+.members-table th,.trainers-table th, .members-table td,.trainers-table td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
 }
 
 /* Table Hover Effect */
-.members-table tbody tr:hover {
+.members-table tbody tr:hover,.trainers-table tbody tr:hover {
     background-color: #f0f0f0;
     transition: background 0.3s ease-in-out;
 }
@@ -91,13 +91,13 @@
 
 /* Responsive Table */
 @media (max-width: 768px) {
-    .members-table {
+    .members-table,.trainers-table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    .members-table th, .members-table td {
+    .members-table th,.trainers-table th .members-table td,.trainers-table td {
         font-size: 14px;
         padding: 10px;
     }

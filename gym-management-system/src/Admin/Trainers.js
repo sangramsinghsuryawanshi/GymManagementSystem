@@ -7,6 +7,7 @@ const Trainers = () => {
     name: "",
     email: "",
     phoneNumber: "",
+    address:"",
     specialization: "",
     experience: "",
     status: "active",
@@ -28,6 +29,7 @@ const Trainers = () => {
         name: "",
         email: "",
         phoneNumber: "",
+        address:"",
         specialization: "",
         experience: "",
         status: "active",
@@ -74,6 +76,14 @@ const Trainers = () => {
           name="specialization"
           placeholder="Specialization"
           value={newTrainer.specialization}
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          type="text"
+          name="address"
+          placeholder="address"
+          value={newTrainer.address}
           onChange={handleInputChange}
           required
         />

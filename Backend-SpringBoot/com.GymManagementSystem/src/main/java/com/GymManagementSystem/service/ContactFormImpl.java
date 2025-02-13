@@ -1,5 +1,7 @@
 package com.GymManagementSystem.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.GymManagementSystem.model.ContactForm;
@@ -22,6 +24,21 @@ public class ContactFormImpl implements ContactFormService {
 			return "message sent successful.!";
 		}else {
 			return "Message falies to sent.";
+		}
+	}
+
+	@Override
+	public List<ContactForm> isCoFo() {
+		return contactFormRepo.findAll();
+	}
+
+	@Override
+	public String isConFoDel(int contactId) {
+		if(contactFormRepo.existsById(contactId)) {
+			contactFormRepo.deleteById(contactId);
+			return "sucess";
+		}else {
+			return "failed";
 		}
 	}
 

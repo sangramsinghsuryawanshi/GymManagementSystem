@@ -87,5 +87,15 @@ public class MembersImpl implements MembersService {
 			return "not updated";
 		}
 	}
+
+	@Override
+	public String isDelMem(int member_id) {
+		if(memeberRpository.existsById(member_id)) {
+			memeberRpository.deleteById(member_id);
+			return "sucess";
+		}else {
+			return "failed";
+		}
+	}
 	
 }

@@ -1,132 +1,146 @@
+
+html {
+  background: url('/public/images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
 .member-container {
-  margin-top: 50px; /* Adjusted to move the container further down */
+  margin-top: 50px;
   padding: 20px;
-  background-color: #f4f6f8;
-  border-radius: 8px;
-  max-width: 800px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  border-radius: 12px;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
 }
 
-.module-title {
+.member-container:hover {
+  transform: translateY(-5px);
+}
+
+.module-title-1 {
   text-align: center;
-  color: #00796b;
-  font-size: 28px;
+  color: #ffffff;
+  font-size: 32px;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .member-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
-}
-
-.member-form input,
-.member-form select,
-.member-form label {
-  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .member-form input,
 .member-form select {
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border: none;
   border-radius: 5px;
   outline: none;
-  transition: border-color 0.3s ease;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
 }
 
 .member-form input:focus,
 .member-form select:focus {
-  border-color: #00796b;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 121, 107, 0.5);
 }
 
 .member-form button {
-  padding: 12px;
-  background-color: #00796b;
+  padding: 14px;
+  background: linear-gradient(90deg, #00b894, #00796b);
   color: #ffffff;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .member-form button:hover {
-  background-color: #005a4f;
-}
-.redirect-link {
-  margin-top: 20px;
-  text-align: center;
-  color: #00796b;
-  cursor: pointer;
+  background: linear-gradient(90deg, #00796b, #00b894);
+  transform: scale(1.05);
 }
 
-.redirect-link span {
-  color: #00796b;
+.redirect-link-1 {
+  margin-top: 20px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.redirect-link-1 span {
+  color: #000000;
   text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .redirect-link span:hover {
-  color: #004d40;
+  color: #ffffff;
 }
-.message {
+
+.message-1 {
   text-align: center;
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
+  color: #fff;
+  font-weight: bold;
 }
 
-.message.success {
-  background-color: #d4edda;
-  color: #155724;
+.message-1.success {
+  background: rgba(76, 175, 80, 0.8);
 }
 
-.message.error {
-  background-color: #f8d7da;
-  color: #721c24;
+.message-1.error {
+  background: rgba(244, 67, 54, 0.8);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .member-container {
-    margin-top: 100px; /* Further adjusted for smaller screens */
-    padding: 10px;
-  }
-
-  .member-form {
+    margin-top: 100px;
     padding: 15px;
   }
-
-  .module-title {
-    font-size: 24px;
+  .member-form {
+    padding: 20px;
   }
-
+  .module-title {
+    font-size: 26px;
+  }
   .member-form input,
   .member-form select {
     font-size: 14px;
-    padding: 8px;
+    padding: 10px;
   }
-
   .member-form button {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
   .module-title {
-    font-size: 20px;
+    font-size: 22px;
   }
-
   .member-form input,
   .member-form select {
     font-size: 12px;
+  }
+  .member-form button {
+    font-size: 14px;
   }
 }

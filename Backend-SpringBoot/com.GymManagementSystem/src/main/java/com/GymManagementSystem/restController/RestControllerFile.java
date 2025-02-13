@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -119,10 +120,56 @@ public class RestControllerFile {
         	return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
         }
 	}
-	
-	@GetMapping("trainers")
-	public List<Trainer> isTrainerPutApi(){
+	@PutMapping("/admin/trainers/{trainer_id}")
+	public ResponseEntity<String> updateTrainerApi(@PathVariable int trainer_id, @RequestBody Trainer updatedTrainer) {
+		logger.info("PUT API hit with member_id: {}", trainer_id); // Log API hit
+        logger.info("Received data: {}", updatedTrainer.toString());
+        String message = trainerService.isUpTrainer(trainer_id, updatedTrainer);
+        if(message.equals("updated")) {
+        	return new ResponseEntity<String>(message, HttpStatus.OK);
+        }else {
+        	return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+        }
+	}
+	@GetMapping("/admin/trainers")
+	public List<Trainer> isAdminTrainerPutApi(){
 		return trainerService.isGetTrainer();
+	}
+	@GetMapping("/admin/members")
+	public List<Members> isAdminMemberGetApi() {
+		return membersService.getMember();
+	}
+	@DeleteMapping("/admin/del/members/{member_id}")
+	public ResponseEntity<String> isMemDelApi(@PathVariable int member_id){
+		String message = membersService.isDelMem(member_id);
+		if(message.equals("sucess")) {
+			return new ResponseEntity<String>(message, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+		}
+	}
+	@DeleteMapping("/admin/del/trainers/{trainerId}")
+	public ResponseEntity<String> isTrainerDelApi(@PathVariable int trainerId){
+		String message = trainerService.isDelTrainer(trainerId);
+		if(message.equals("sucess")) {
+			return new ResponseEntity<String>(message, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+		}
+	}
+	@GetMapping("/admin/contact")
+	public List<ContactForm> isCoFoGetApi(){
+		return contactFormService.isCoFo();
+	}
+	@DeleteMapping("/admin/del/contact/{contactId}")
+	public ResponseEntity<String> isConFoDelApi(@PathVariable int contactId){
+		String message = contactFormService.isConFoDel(contactId);
+		logger.info("Del API:{}",contactId);
+		if(message.equals("sucess")) {
+			return new ResponseEntity<String>(message, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 }

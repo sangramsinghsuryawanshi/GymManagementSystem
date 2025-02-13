@@ -1,0 +1,93 @@
+/* Main Container */
+.contact-container-1 {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contact List */
+  .contact-list {
+    margin-top: 20px;
+  }
+  
+  .contact-list h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background: #b85a5a;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      width: 95%;
+    }
+  
+    table {
+      font-size: 14px;
+    }
+  
+    .delete-btn {
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    table, th, td {
+      display: block;
+      width: 100%;
+    }
+  
+    th {
+      text-align: center;
+    }
+  
+    td {
+      text-align: center;
+      padding: 8px 0;
+    }
+  
+    .delete-btn {
+      font-size: 12px;
+    }
+  }
+  

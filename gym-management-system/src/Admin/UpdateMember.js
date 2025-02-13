@@ -6,7 +6,7 @@ import '../AdminCSS/UpdateMember.css';
 const UpdateMember = () => {
   const navigate = useNavigate();
   const storedMember = JSON.parse(localStorage.getItem('memberToUpdate')) || {};
-
+  console.log(storedMember);
   const [memberData, setMemberData] = useState({
     member_id: storedMember.member_id || '',
     name: storedMember.name || '',

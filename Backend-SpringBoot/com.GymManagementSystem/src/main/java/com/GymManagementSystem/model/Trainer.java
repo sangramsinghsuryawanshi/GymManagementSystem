@@ -31,12 +31,14 @@ public class Trainer {
     @Column(nullable = false)
     private String status = "active";  // Default status
 
-    public Trainer() {
-		super();
-		
-	}
+    @Column(nullable = false)
+    private int experience; // Experience in years
 
-	public Trainer(int trainerId, String name, String email, String phoneNumber, String specialization, String address, String status) {
+    public Trainer() {
+        super();
+    }
+
+    public Trainer(int trainerId, String name, String email, String phoneNumber, String specialization, String address, String status, int experience) {
         this.trainerId = trainerId;
         this.name = name;
         this.email = email;
@@ -44,6 +46,7 @@ public class Trainer {
         this.specialization = specialization;
         this.address = address;
         this.status = status;
+        this.experience = experience;
     }
 
     // Getters and Setters
@@ -103,11 +106,19 @@ public class Trainer {
         this.status = status;
     }
 
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
     // toString method
     @Override
     public String toString() {
         return "Trainer [trainerId=" + trainerId + ", name=" + name + ", email=" + email 
             + ", phoneNumber=" + phoneNumber + ", specialization=" + specialization 
-            + ", address=" + address + ", status=" + status + "]";
+            + ", address=" + address + ", status=" + status + ", experience=" + experience + "]";
     }
 }
